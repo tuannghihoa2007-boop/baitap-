@@ -1,0 +1,468 @@
+
+/* 1. CÀI ĐẶT CHUNG */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #252525;
+    background: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 2. THANH MENU */
+.navbar {
+    min-height: 60px;
+    padding: 0 5%;
+    background: #1670ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 22px;
+}
+
+.navbar nav a {
+    color: #eaf2ff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* 3. ẢNH BÌA */
+.hero {
+    min-height: 400px;
+    background:
+        linear-gradient(
+            rgba(0, 35, 75, 0.35),
+            rgba(0, 35, 75, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 4px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-yellow {
+    color: #222;
+    background: #ffbd08;
+}
+
+.btn-outline {
+    color: white;
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 4. BA THẺ GIỚI THIỆU */
+.highlights {
+    background: #f7f8fc;
+    padding: 35px 6.5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.highlight-card {
+    background: white;
+    padding: 22px 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+.sun {
+    color: #f5c928;
+}
+
+.fish {
+    color: #70b9eb;
+}
+
+.mountain {
+    color: #52cdb3;
+}
+
+.highlight-card h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.highlight-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 5. TIÊU ĐỀ CÁC KHU VỰC */
+.section {
+    padding: 25px 6.5% 35px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: #1670ed;
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 6. DANH SÁCH ĐỊA ĐIỂM */
+.place-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.place-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.place-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.place-card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    display: block;
+}
+
+.place-body {
+    padding: 10px 12px 14px;
+}
+
+.place-body h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.place-body p {
+    font-size: 13.5px;
+    color: #666;
+    min-height: 65px;
+}
+
+.tag {
+    display: inline-block;
+    background: #1670ed;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.tag.green {
+    background: #25835d;
+}
+
+/* 7. KHU VỰC ẨM THỰC */
+.food-section {
+    background: #f7f8fc;
+    padding: 30px 6.5%;
+}
+
+.food-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 28px;
+}
+
+.food-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 7px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.food-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.food-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #20b58b;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.food-item h3 {
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.food-item p {
+    color: #666;
+    font-size: 13.5px;
+}
+
+/* 8. LỊCH TRÌNH */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.plan-card {
+    padding: 22px;
+    border: 1px solid #e2e5eb;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.plan-card h3 {
+    color: #1670ed;
+    margin-bottom: 8px;
+}
+
+.plan-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 9. CHÂN TRANG */
+.footer {
+    background: #20242c;
+    color: white;
+    padding: 25px 7% 12px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+    gap: 30px;
+}
+
+.footer h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.footer p,
+.footer a {
+    color: #e1e3e7;
+    font-size: 13px;
+}
+
+.footer-grid > div:nth-child(2) a {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.social-links a {
+    background: #1877f2;
+    color: white;
+    padding: 4px 9px;
+    border-radius: 15px;
+}
+
+.social-links a:nth-child(2) {
+    background: #bf3988;
+}
+
+.social-links a:nth-child(3) {
+    background: #e5394b;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 12px;
+    margin-top: 20px;
+    color: #bfc4cd !important;
+}
+
+/* 10. GIAO DIỆN MÁY TÍNH BẢNG */
+@media (max-width: 800px) {
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 5%;
+        background: #1265d8;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar nav.open {
+        display: flex;
+    }
+
+    .highlights,
+    .place-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .food-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 11. GIAO DIỆN ĐIỆN THOẠI */
+@media (max-width: 560px) {
+    .hero {
+        min-height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .highlights,
+    .place-grid,
+    .plan-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section,
+    .food-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .place-card img {
+        height: 210px;
+    }
+
+    .place-body p {
+        min-height: 0;
+    }
+
+    .food-image {
+        height: 240px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+}
